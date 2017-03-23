@@ -1,0 +1,11 @@
+pipeline {
+    agent    { label 'master' }
+    options  { timestamps() }
+    stages {
+        stage("JobX") {
+            steps {
+                build job: 'JobX', wait: false
+            }
+        }
+    }
+}
