@@ -1,11 +1,22 @@
 pipeline {
-    agent    { label 'master' }
-    options  { timestamps() }
+    agent { label 'master' }
+    options { timestamps() }
     stages {
-        stage("JobX") {
+        stage('Create') {
             steps {
-                build job: 'JobX', wait: false
+                jobDsl scriptText: '''freeStyleJob("Publish HTML") {
+                }'''
             }
+        }
+        stage('Build') {
+            steps {
+                build 'Publish HTML'
+            }
+        }
+    }
+    post {
+        always {
+            echo 'Done!'
         }
     }
 }
