@@ -1,13 +1,13 @@
 [
   {
-    "cpu": 256,
+    "cpu": 512,
     "essential": true,
     "image": "${image_url}",
-    "memory": 512,
+    "memory": 1024,
     "name": "${container_name}",
     "portMappings": [
       {
-        "containerPort": 2368,
+        "containerPort": 8080,
         "hostPort": 8080
       }
     ],
