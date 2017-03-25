@@ -8,7 +8,7 @@ data "template_file" "task_definition" {
   template = "${file("${path.module}/json/task-definition.json")}"
 
   vars {
-    image_url        = "rustamar/jenkins_generator:1"
+    image_url        = "rustamar/jenkins_generator:2"
     container_name   = "jenkins"
     log_group_region = "${var.aws_region}"
     log_group_name   = "${aws_cloudwatch_log_group.app.name}"
