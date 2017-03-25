@@ -7,8 +7,8 @@
     "name": "${container_name}",
     "portMappings": [
       {
-        "containerPort": 8080,
-        "hostPort": 8080
+        "containerPort": ${container_port},
+        "hostPort": ${container_port}
       }
     ],
     "logConfiguration": {
