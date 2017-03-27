@@ -78,9 +78,10 @@ resource "aws_ecs_cluster" "jenkins" {
 }
 
 data "template_file" "jenkins_task_definition" {
-  template = "${file("${path.module}/json/task-definition.json")}"
+  template = "${file("${path.module}/json/jenkins-task-definition.json")}"
 
   vars {
+    cpu              = "256"
     image_url        = "rustamar/jenkins_generator:2"
     container_name   = "jenkins"
     container_port   = "8080"

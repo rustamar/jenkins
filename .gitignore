@@ -1,2 +1,4 @@
 terraform.tfstate*
 ecs/sensitive.tf
+.idea
+jenkins.iml

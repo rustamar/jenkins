@@ -1,9 +1,9 @@
 [
   {
-    "cpu": 512,
+    "cpu": ${cpu},
     "essential": true,
     "image": "${image_url}",
-    "memory": 1024,
+    "memory": 512,
     "name": "${container_name}",
     "portMappings": [
       {
