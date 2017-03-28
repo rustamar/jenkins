@@ -54,9 +54,7 @@ data "template_file" "jenkins_cloud_config" {
 
 resource "aws_launch_configuration" "jenkins" {
   name                        = "jenkins"
-  security_groups             = [
-    "${aws_security_group.instance_sg.id}",
-  ]
+  security_groups             = ["${aws_security_group.instance_sg.id}"]
 
   key_name                    = "${var.key_name}"
   image_id                    = "${data.aws_ami.stable_coreos.id}"
