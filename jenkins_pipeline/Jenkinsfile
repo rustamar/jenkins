@@ -5,6 +5,10 @@ pipeline {
         stage('Create') {
             steps {
                 jobDsl scriptText: '''freeStyleJob("Publish HTML") {
+                    displayName("Publish HTML to Apache")
+                    steps {
+                      shell(readFileFromWorkspace('publish.sh'))
+                    }
                 }'''
             }
         }

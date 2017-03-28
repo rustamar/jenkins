@@ -20,7 +20,7 @@ resource "aws_ecs_task_definition" "httpd" {
   container_definitions = "${data.template_file.httpd_task_definition.rendered}"
   volume {
     name      = "http_storage"
-    host_path = "/mnt"
+    host_path = "/var/httpd"
   }
 }
 

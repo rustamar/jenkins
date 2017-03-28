@@ -80,7 +80,7 @@ data "template_file" "jenkins_task_definition" {
 
   vars {
     cpu              = "256"
-    image_url        = "rustamar/jenkins_generator:2"
+    image_url        = "rustamar/jenkins_generator:3"
     container_name   = "jenkins"
     container_port   = "8080"
     log_group_region = "${var.aws_region}"

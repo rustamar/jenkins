@@ -21,6 +21,7 @@ coreos:
        RestartSec=30
        RestartPreventExitStatus=5
        SyslogIdentifier=ecs-agent
+       ExecStartPre=-/bin/install -o core -d /var/httpd
        ExecStartPre=-/bin/mkdir -p /var/log/ecs /var/ecs-data /etc/ecs
        ExecStartPre=-/usr/bin/docker kill ecs-agent
        ExecStartPre=-/usr/bin/docker rm ecs-agent
